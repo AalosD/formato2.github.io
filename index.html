@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología Mobile First</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Proceso de diseño Web Mobile First</h1>
+        <h2>Etapa de diseño</h2>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Fase 1 -->
+        <div class="phase" id="phase1">
+            <h2>Fase 1: Mapa del Sitio</h2>
+            <p>Define la estructura de navegación de tu sitio web. Crea un mapa visual donde representes las páginas principales y sus conexiones.</p>
+            <p>Sube el mapa de sitio en formato .jpg, .png, o .gif y después contesta las preguntas para continuar a la siguiente etapa.</p>
+            <div class="site-map">
+                <label for="site-map">Agrega el mapa de sitio (imagen)</label>
+                <input type="file" id="site-map" name="site-map" accept="image/*">
+                 <div class="image-frame">
+                    <img id="preview" src="#" alt="Previsualización de la imagen" style="display:none;">
+                 </div>
+                <script src="script-sitemap.js"></script>
+            </div><br>
+            <div class="checklist">
+                <label>
+                    <input type="checkbox" name="formularios" value="formularios_contacto">
+                    ¿La jerarquía de la información es clara y fácil de interpretar visualmente?
+                </label><br>
+<!--
+                <label>
+                    <input type="checkbox" name="formularios" value="formularios_registro">
+                    ¿Las secciones principales están claramente identificadas?
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="bases_datos" value="conexion_bd">
+                    ¿Los enlaces a las secciones y páginas son fácilmente identificables en el gráfico?
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="autenticacion" value="autenticacion_usuarios">
+                    ¿Se utilizan elementos visuales (como gráficos o iconos) que faciliten la comprensión del mapa?
+                </label><br>
+                -->
+            </div>
+            <button onclick="nextPhase(1)" id="complete-phase1" disabled>Completar Fase 1</button>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="phase" id="phase2" style="display:none;">
+            <h2>Fase 2: Wireframes</h2>
+            <p>Crea wireframes para estructurar el contenido de cada página antes de realizar el diseño visual.</p>
+            <!-- wireframe de 480px -->
+            <div class="site-map">
+                <h3>Wireframes de 480px</h3>
+                <label for="wire480">Agrega el/los wireframes de 480px (imagen)</label>
+                <input type="file" id="wire480" name="wire480" accept="image/*">
+                
+                 <div class="image-frame">
+                    <img id="preview2" src="#" alt="Previsualización de la imagen" style="display:none;">
+                 </div>
+                 <script src="script-wire480.js"></script>
+            </div><br>
+
+            <!-- wireframe de 768px -->
+            <div class="site-map">
+                <h3>Wireframes de 768px</h3>
+                <label for="wire768">Agrega el/los wireframes de 768px (imagen)</label>
+                <input type="file" id="wire768" name="wire768" accept="image/*">
+                
+                 <div class="image-frame">
+                    <img id="preview3" src="#" alt="Previsualización de la imagen" style="display:none;">
+                 </div>
+                 <script src="script-wire768.js"></script>
+            </div><br>
+            <!-- wireframe de 1024px -->
+            <div class="site-map">
+                <h3>Wireframes de 1024px</h3>
+                <label for="wirelarge">Agrega el/los wireframes de 768px (imagen)</label>
+                <input type="file" id="wirelarge" name="wirelarge" accept="image/*">
+                
+                 <div class="image-frame">
+                    <img id="preview4" src="#" alt="Previsualización de la imagen" style="display:none;">
+                 </div>
+                 <script src="script-wirelarge.js"></script>
+            </div><br>
+
+            <div class="checklist">
+                <label>
+                    <input type="checkbox" name="wireframes" value="layout_basico">
+                    ¿La estructura general de los wireframes se ajustan a las pautas de diseño Mobile First?
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="wireframes" value="disposicion_componentes">
+                    ¿Los elementos de navegación son fácilmente accesibles y comprensibles en los diferentes anchos de pantalla?
+                </label><br>
+                <label>
+                    <input type="checkbox" name="wireframes" value="disposicion_componentes">
+                    ¿Los wireframes presentan un diseño visualmente atractivo, manteniendo la simplicidad y funcionalidad?
+                </label><br>
+                <label>
+                    <input type="checkbox" name="wireframes" value="disposicion_componentes">
+                    ¿Se utilizan elementos visuales consistentes (texto, botones, imágenes, videos) en los wireframes?
+                </label><br>
+            </div>
+
+            <button onclick="nextPhase(2)" id="complete-phase2" disabled>Completar Fase 2</button>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="phase" id="phase3" style="display:none;">
+            <h2>Fase 3: Diseño Visual</h2>
+            <p>Desarrolla el diseño visual de tu sitio web basándote en los wireframes y prototipos previos.</p>
+            <div class="checklist">
+                <label>
+                    <input type="checkbox" name="diseno_visual" value="layout_responsive">
+                    Layout Responsive
+                </label><br>
+                <label>
+                    <input type="checkbox" name="diseno_visual" value="tipografia_elegida">
+                    Tipografía Elegida
+                </label><br>
+                <label>
+                    <input type="checkbox" name="diseno_visual" value="paleta_colores">
+                    Paleta de Colores
+                </label><br>
+            </div>
+            <button onclick="nextPhase(3)" id="complete-phase3" disabled>Completar Fase 3</button>
+        </div>
+
+        <!-- Fase 4 -->
+        <div class="phase" id="phase4" style="display:none;">
+            <h2>Fase 4: Creación de Contenidos</h2>
+            <p>Crea y organiza el contenido de tu sitio web, como textos, imágenes, y otros elementos multimedia.</p>
+            <div class="checklist">
+                <label>
+                    <input type="checkbox" name="contenidos" value="textos">
+                    Textos
+                </label><br>
+                <label>
+                    <input type="checkbox" name="contenidos" value="imagenes">
+                    Imágenes
+                </label><br>
+                <label>
+                    <input type="checkbox" name="contenidos" value="videos">
+                    Videos
+                </label><br>
+            </div>
+            <button onclick="nextPhase(4)" id="complete-phase4" disabled>Completar Fase 4</button>
+        </div>
+        <div class="completion" id="completion" style="display:none;">
+            <h2>¡Has completado todas las fases!</h2>
+            <p>Ahora tu proyecto web tiene una base sólida para continuar con el desarrollo.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
